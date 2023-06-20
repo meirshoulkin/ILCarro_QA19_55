@@ -31,7 +31,7 @@ public class HelperBase {
         }
     }
 
-    public boolean isElementPresent(By locator, String loginOrPasswordIncorrect){
+   public boolean isElementPresent(By locator){
         return wd.findElements(locator).size() > 0;
     }
 }
