@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelperUser extends HelperBase{
+    public boolean isLoggedWrongEmail(){
+                return isElementPresent(By.xpath("//div[@class='error']"));
+    };
+
     public HelperUser(WebDriver wd) {
         super(wd);
     }

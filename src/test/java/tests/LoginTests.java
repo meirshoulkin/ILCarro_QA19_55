@@ -38,8 +38,18 @@ public class LoginTests extends TestBase{
 //        Assert.assertTrue(app.getUser().isLoggedSuccess());
         }
 
+        @Test
+        public void loginNegativeUserWrongEmail(){
+                User user = new User().withEmail("asdfgh.com").withPassword("$Asdf1234");
+                app.getUser().openLoginForm();
+                app.getUser().fillLoginForm(user);
+                //app.getUser().submitForm();
+                app.getUser().pause(5000);
+                Assert.assertTrue(app.getUser().isLoggedWrongEmail());
+        }
+
         @AfterMethod
         public void postCondition(){
-                app.getUser().clickOkButton();
+               // app.getUser().clickOkButton();
         }
 }
