@@ -18,6 +18,9 @@ public class HelperUser extends HelperBase{
     public void openLoginForm(){
         click(By.xpath("//a[text()=' Log in ']"));
     }
+    public void openRegistrationForm(){
+        click(By.xpath("//a[text()=' Sign up ']"));
+    }
 
     public void fillLoginForm(String email, String password){
         type(By.id("email"), email);
@@ -51,6 +54,23 @@ public class HelperUser extends HelperBase{
     public void logout(){
         click(By.xpath("//a[.=' Logout ']"));
     }
+
+    public void fillRegistrationForm(User user){
+        type(By.id("name"), user.getName());
+        type(By.id("lastName"), user.getLastName());
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
+        click(By.cssSelector("label[for='terms-of-use']"));
+    }
+
+    public void login(User user){
+        openLoginForm();
+        fillLoginForm(user);
+        submitForm();
+        clickOkButton();
+
+    }
+
 }
 
 

@@ -1,6 +1,7 @@
 package tests;
 
 import models.User;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -43,8 +44,8 @@ public class LoginTests extends TestBase{
                 User user = new User().withEmail("asdfgh.com").withPassword("$Asdf1234");
                 app.getUser().openLoginForm();
                 app.getUser().fillLoginForm(user);
-                //app.getUser().submitForm();
-                app.getUser().pause(5000);
+                app.getUser().submitForm();
+               // app.getUser().pause(5000);
                 Assert.assertTrue(app.getUser().isLoggedWrongEmail());
         }
 
