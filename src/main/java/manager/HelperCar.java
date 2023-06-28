@@ -40,21 +40,21 @@ public class HelperCar extends HelperBase{
         type(By.id("class"), car.getCarClass());
 
  //       type(By.id("serialNumber"), car.getCarRegNumber());
-        type1(By.xpath("//input[@id='serialNumber']"), car.getCarRegNumber());
+        type1(By.id("serialNumber"), car.getCarRegNumber());
 
         type(By.id("price"), car.getPrice());
     }
 
     public void type1(By locator, String carRegNumber) {
         WebElement element = wd.findElement(locator);
-        intputCarRegistrationNumberClick();
+        intputCarRegistrationNumberClick(locator);
         element.clear();
         element.sendKeys(carRegNumber);
     }
 
-    public void intputCarRegistrationNumberClick() {
+    public void intputCarRegistrationNumberClick(By locator) {
 
-        Rectangle rect = wd.findElement(By.xpath("//input[@id='serialNumber']")).getRect();
+        Rectangle rect = wd.findElement(locator).getRect();
         int x = rect.getX() + 55;
         int y = rect.getY() + rect.getHeight() / 5;
         Actions actions = new Actions(wd);
