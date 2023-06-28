@@ -40,23 +40,23 @@ public class HelperCar extends HelperBase{
         type(By.id("class"), car.getCarClass());
 
  //       type(By.id("serialNumber"), car.getCarRegNumber());
-        type1(By.id("serialNumber"), car.getCarRegNumber());
+        type1(By.xpath("//input[@id='serialNumber']"), car.getCarRegNumber());
 
         type(By.id("price"), car.getPrice());
     }
 
     public void type1(By locator, String carRegNumber) {
-        WebElement element = wd.findElement(By.xpath("//input[@id='serialNumber']"));
+        WebElement element = wd.findElement(locator);
         intputCarRegistrationNumberClick();
         element.clear();
-        element.sendKeys(element.getText());
+        element.sendKeys(carRegNumber);
     }
 
     public void intputCarRegistrationNumberClick() {
 
         Rectangle rect = wd.findElement(By.xpath("//input[@id='serialNumber']")).getRect();
-        int x = rect.getX() + 1777;
-        int y = rect.getY() + rect.getHeight() / 2;
+        int x = rect.getX() + 55;
+        int y = rect.getY() + rect.getHeight() / 5;
         Actions actions = new Actions(wd);
         actions.moveByOffset(x, y).click().perform();
 
