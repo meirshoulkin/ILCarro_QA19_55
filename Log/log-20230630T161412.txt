@@ -1,0 +1,20 @@
+16:14:22 INFO  tests.TestBase - Start test --->registrationNegativeWrongPassword
+16:14:22 INFO  manager.MyListener - Start searching element by locator -->By.xpath: //a[text()=' Sign up ']
+16:14:22 INFO  manager.MyListener - Element with locator -->By.xpath: //a[text()=' Sign up ']is found
+16:14:22 INFO  tests.TestBase - Method openRegistrationForm() invoked:
+16:14:22 INFO  manager.MyListener - Start searching element by locator -->By.id: name
+16:14:22 INFO  manager.MyListener - Element with locator -->By.id: nameis found
+16:14:22 INFO  manager.MyListener - Start searching element by locator -->By.id: lastName
+16:14:22 INFO  manager.MyListener - Element with locator -->By.id: lastNameis found
+16:14:23 INFO  manager.MyListener - Start searching element by locator -->By.id: email
+16:14:23 INFO  manager.MyListener - Element with locator -->By.id: emailis found
+16:14:23 INFO  manager.MyListener - Start searching element by locator -->By.id: password
+16:14:23 INFO  manager.MyListener - Element with locator -->By.id: passwordis found
+16:14:23 INFO  manager.MyListener - Start searching element by locator -->By.cssSelector: .checkbox-container
+16:14:23 INFO  manager.MyListener - Element with locator -->By.cssSelector: .checkbox-containeris found
+16:14:23 INFO  tests.TestBase - Method illRegistrationForm() invoked:
+16:14:23 INFO  manager.MyListener - Start searching element by locator -->By.cssSelector: [type='submit']
+16:14:23 INFO  manager.MyListener - Element with locator -->By.cssSelector: [type='submit']is found
+16:14:23 INFO  tests.TestBase - Method submitForm() invoked:
+16:14:23 INFO  tests.TestBase - Method openRegistrationForm() invoked:john862@mail.com&Asdf1234
+16:14:23 INFO  tests.TestBase - =================================

@@ -38,25 +38,26 @@ public class HelperCar extends HelperBase{
         select(By.id("fuel"), car.getFuel());
         type(By.id("seats"), car.getSeats());
         type(By.id("class"), car.getCarClass());
-
- //       type(By.id("serialNumber"), car.getCarRegNumber());
-        type1(By.id("serialNumber"), car.getCarRegNumber());
-
+        type(By.id("serialNumber"), car.getCarRegNumber());
+        // type1(By.id("serialNumber"), car.getCarRegNumber());
+        //intputCarRegistrationNumberClick(car.getCarNumber());
         type(By.id("price"), car.getPrice());
     }
 
-    public void type1(By locator, String carRegNumber) {
-        WebElement element = wd.findElement(locator);
-        intputCarRegistrationNumberClick(locator);
-        element.clear();
-        element.sendKeys(carRegNumber);
-    }
+//    public void type1(By locator, String carRegNumber) {
+//        intputCarRegistrationNumberClick(locator);
+//        WebElement element = wd.findElement(locator);
+//        //intputCarRegistrationNumberClick(locator);
+//
+//        element.clear();
+//        element.sendKeys(carRegNumber);
+//    }
 
-    public void intputCarRegistrationNumberClick(By locator) {
+    public void intputCarRegistrationNumberClick(String serialNumber) {
 
-        Rectangle rect = wd.findElement(locator).getRect();
-        int x = rect.getX() + 55;
-        int y = rect.getY() + rect.getHeight() / 5;
+        Rectangle rect = wd.findElement(By.id("serialNumber")).getRect();
+        int x = rect.getX() + rect.getWidth() * 7/8;
+        int y = rect.getY() + rect.getHeight() / 2;
         Actions actions = new Actions(wd);
         actions.moveByOffset(x, y).click().perform();
 

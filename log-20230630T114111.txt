@@ -1,0 +1,4 @@
+11:41:22 INFO  tests.TestBase - Method openRegistrationForm() invoked:
+11:41:23 INFO  tests.TestBase - Method illRegistrationForm() invoked:
+11:41:23 INFO  tests.TestBase - Method submitForm() invoked:
+11:41:23 INFO  tests.TestBase - Method openRegistrationForm() invoked:john2482@mail.com&Asdf1234
