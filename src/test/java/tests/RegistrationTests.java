@@ -2,9 +2,15 @@ package tests;
 
 import models.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class RegistrationTests extends TestBase{
+
+    @BeforeMethod
+    public void precondition(){
+        if(app.getUser().isLogged()) app.getUser().logout();
+    }
 
     @Test
     public void registrationPositive(){

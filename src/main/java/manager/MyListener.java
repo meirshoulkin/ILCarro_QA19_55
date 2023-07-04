@@ -24,13 +24,20 @@ public class MyListener extends AbstractWebDriverEventListener {
     public void afterFindBy(By by, WebElement element, WebDriver driver) {
         super.afterFindBy(by, element, driver);
         logger.info("Element with locator -->" +by + "is found");
+
     }
 
     @Override
     public void onException(Throwable throwable, WebDriver driver) {
+        int i = (int)(System.currentTimeMillis()/1000)%3600;
+        String link = "src/test/sreenshots/screenshot-" + i +".png";
+        HelperBase helperBase = new HelperBase(driver);
         super.onException(throwable, driver);
         logger.info("Something went wrong!");
         logger.info(throwable.getMessage());
         logger.info(throwable.fillInStackTrace().getMessage());
+        helperBase.takeScreenShot(link);
+        logger.info("This is a link to screenshot with error:" +link);
+
     }
 }

@@ -24,13 +24,14 @@ public class TestBase {
 
     @AfterSuite
     public void stop(){
-        app.tearDown();
+//        app.tearDown();
     }
 
     @BeforeMethod
     public void startLogger(Method method){
         logger.info("Start test --->" + method.getName());
     }
+    
     @AfterMethod
     public void end(){
         logger.info("=================================");

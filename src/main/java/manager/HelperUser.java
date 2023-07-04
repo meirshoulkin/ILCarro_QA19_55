@@ -37,7 +37,6 @@ public class HelperUser extends HelperBase{
         type(By.id("password"), user.getPassword());
         checkboxClick();
     }
-
     public void checkboxClick(){
         System.out.println("checkbox is Clicked");
         // variant 1
@@ -62,6 +61,7 @@ public class HelperUser extends HelperBase{
       public void submitForm(){
           wd.findElement(By.cssSelector("[type='submit']")).click();
       }
+
     public boolean isLoggedSuccess(){
         WebDriverWait wait = new WebDriverWait(wd, 10);
         wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
@@ -72,6 +72,7 @@ public class HelperUser extends HelperBase{
         WebDriverWait wait = new WebDriverWait(wd, 10);
         wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
         return wd.findElement(By.cssSelector(".dialog-container")).getText().contains("Registered");
+
     }
 
     public void clickOkButton(){
