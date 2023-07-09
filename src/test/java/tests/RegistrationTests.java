@@ -2,17 +2,18 @@ package tests;
 
 import models.User;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class RegistrationTests extends TestBase{
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition(){
         if(app.getUser().isLogged()) app.getUser().logout();
     }
 
-    @Test
+    @Test(groups = {"sanityGroup", "regressionGroup"})
     public void registrationPositive(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
 
@@ -55,5 +56,12 @@ public class RegistrationTests extends TestBase{
 
     }
 
-
+    @AfterMethod(alwaysRun = true)
+    public void postCondition(){
+        app.getUser().clickOkButton();
+    }
+//    @AfterMethod(alwaysRun = true)
+//    public void tearDown(){
+//
+//    }
 }

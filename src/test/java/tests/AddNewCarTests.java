@@ -3,6 +3,7 @@ package tests;
 import manager.NgListener;
 import models.Car;
 import models.User;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class AddNewCarTests  extends TestBase{
     // attach photo
     // submit form
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition(){
         if(app.getUser().isLogged()==false){
             app.getUser()
@@ -26,7 +27,7 @@ public class AddNewCarTests  extends TestBase{
         }
     }
 
-    @Test
+    @Test(groups = {"sanityGroup"})
     public void addNewCarPositive(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
 
@@ -44,6 +45,11 @@ public class AddNewCarTests  extends TestBase{
 
         app.getCar().openCarForm();
         app.getCar().fillCarForm(car);
+
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown(){
 
     }
 }
