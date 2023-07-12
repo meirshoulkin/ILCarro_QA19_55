@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -13,7 +14,7 @@ public class RegistrationTests extends TestBase{
         if(app.getUser().isLogged()) app.getUser().logout();
     }
 
-    @Test(groups = {"sanityGroup", "regressionGroup"})
+    @Test(groups = {"sanityGroup","regressionGroup"})
     public void registrationPositive(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
 
@@ -54,6 +55,15 @@ public class RegistrationTests extends TestBase{
         );
 //        Assert.assertTrue(app.getUser().isRegistered());
 
+    }
+
+    @Test(dataProvider = "userModelListRegistrationDTO", dataProviderClass = ProviderData.class)
+    public void registrationPositiveUserDTO(User user){
+        logger.info("User:" + user.toString() + "is provided");
+        app.getUser().openRegistrationForm();
+        app.getUser().fillRegistrationForm(user);
+        app.getUser().submitForm();
+        Assert.assertTrue(app.getUser().isRegistered());
     }
 
     @AfterMethod(alwaysRun = true)

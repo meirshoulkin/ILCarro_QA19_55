@@ -30,7 +30,7 @@ public class MyListener extends AbstractWebDriverEventListener {
     @Override
     public void onException(Throwable throwable, WebDriver driver) {
         int i = (int)(System.currentTimeMillis()/1000)%3600;
-        String link = "src/test/sreenshots/screenshot-" + i +".png";
+        String link = "src/test/screenshots/screenshot" + i +".png";
         HelperBase helperBase = new HelperBase(driver);
         super.onException(throwable, driver);
         logger.info("Something went wrong!");
