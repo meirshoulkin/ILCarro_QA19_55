@@ -17,16 +17,19 @@ public class SearchTests extends TestBase{
     public void searchPositiveTestDatePickerDays(){
         app.getSearch().fillSearchFormDatePickerDays("Haifa", "7/13/2023", "7/20/2023");
         app.getSearch().submitForm();
+
     }
+
     @Test
     public void searchPositiveTestDatePickerMonths(){
-        app.getSearch().fillSearchFormDatePickerMonths("Haifa", "7/13/2023", "10/20/2023");
+        app.getSearch().fillSearchFormDatePickerMonths("Haifa", "7/13/2023", "10/13/2023");
         app.getSearch().submitForm();
+
     }
     @Test
     public void searchPositiveTestDatePickerYears(){
-        app.getSearch().fillSearchFormDatePickerYears("Haifa", "7/13/2023", "2/20/2024");
+        app.getSearch().fillSearchFormDatePickerYears("Haifa", "03/13/2024", "07/12/2024");
         app.getSearch().submitForm();
-    }
 
+    }
 }

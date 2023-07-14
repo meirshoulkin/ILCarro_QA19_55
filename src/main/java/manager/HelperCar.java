@@ -52,14 +52,12 @@ public class HelperCar extends HelperBase{
 //        element.sendKeys(carRegNumber);
 //    }
 
-//    public void intputCarRegistrationNumberClick(String serialNumber) {
-//
+//    public void intputCarRegistrationNumberClick(String serialNumber) {//
 //        Rectangle rect = wd.findElement(By.id("serialNumber")).getRect();
 //        int x = rect.getX() + rect.getWidth() * 7/8;
 //        int y = rect.getY() + rect.getHeight() / 2;
 //        Actions actions = new Actions(wd);
-//        actions.moveByOffset(x, y).click().perform();
-//
+//        actions.moveByOffset(x, y).click().perform();//
 //    }
 
     public void typeLocation(String address){

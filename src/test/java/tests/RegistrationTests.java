@@ -31,8 +31,20 @@ public class RegistrationTests extends TestBase{
         + "&" + user.getPassword()
         );
         Assert.assertTrue(app.getUser().isRegistered());
-    }
 
+    }
+    @Test(dataProvider = "userModelListDTO_CSV", dataProviderClass = ProviderData.class)
+    public void registrationPositiveCSV(User user){
+
+        app.getUser().openRegistrationForm();
+        app.getUser().fillRegistrationForm(user);
+        app.getUser().submitForm();
+        logger.info("Registration test starts with data : " + user.getEmail()
+                + " & " + user.getPassword()
+        );
+        Assert.assertTrue(app.getUser().isRegistered());
+
+    }
 
     @Test
     public void registrationNegativeWrongPassword(){
